@@ -1,0 +1,11 @@
+{
+    "name": "SqueezeAI",
+    "version": "0.1.0",
+    "description": "SqueezeAI helps you to scrap/summarize the content of the webpage you are currently on. It saves your time by only extracting and providing the essential articles/paragraphs from the page.",
+    "manifest_version": 3,
+    "author": "Siddique",
+    "action": {
+        "default_popup": "./main/index.html",
+        "default_title": "Latest Covid Report"
+    }
+}
