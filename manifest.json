@@ -6,6 +6,6 @@
     "author": "Siddique",
     "action": {
         "default_popup": "./main/index.html",
-        "default_title": "Latest Covid Report"
+        "default_title": "SqueezeAi"
     }
 }
