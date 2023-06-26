@@ -1,15 +1,31 @@
-const but = document.getElementById("but");
-const handleClick = () => {
-    console.log("hello");
-    fetch("http://127.0.0.1:8000/post/", {        
-        method: "POST",        
+const start = document.getElementById("but");
+
+const postPrompt = (url) => {
+        fetch("http://127.0.0.1:8000/post/", {
+        method: "POST",
         body: JSON.stringify({
-            prompt:'hello'
-        }),        
+            prompt: `summarize with important points this web page: ${url} `,
+        }),
         headers: {
             "Content-type": "application/json; charset=UTF-8",
         },
     });
 };
 
-but.addEventListener("click", handleClick);
+const getUrl = () => {
+    chrome.tabs.query(
+        {
+            active: true,
+            currentWindow: true,
+        },
+        function (tabs) {
+            var tabURL = tabs[0].url;
+            console.log(tabURL)
+            postPrompt(tabURL);
+        }
+    );
+};
+
+
+
+start.addEventListener("click", getUrl);

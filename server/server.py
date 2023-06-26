@@ -20,6 +20,7 @@ async def root():
 
 @api.post('/post/')
 async def post(prompt:Prompt):
+    print(prompt)
     return {'prompt':prompt}
 
     
