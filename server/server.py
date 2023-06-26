@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from sage import getMessage
 
 api = FastAPI()
 class Prompt(BaseModel):
@@ -20,7 +21,7 @@ async def root():
 
 @api.post('/post/')
 async def post(prompt:Prompt):
-    print(prompt)
+    getMessage(str(prompt))
     return {'prompt':prompt}
 
     
