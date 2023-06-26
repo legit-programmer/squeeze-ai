@@ -9,7 +9,7 @@ client = poe.Client(token=token)
 
 def getMessage(_prompt:str):
     message = _prompt
-    for chunk in client.send_message("capybara", message):
+    for chunk in client.send_message("chinchilla", message):
         pass
     return chunk["text"]
 

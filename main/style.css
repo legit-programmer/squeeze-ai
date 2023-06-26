@@ -8,7 +8,7 @@
 
 .main {
     font-family: 'Montserrat', sans-serif;
-    background-color: #191c40;
+    background-color: #060920;
     width: 500px;
     height: 600px;
     display: flex;
@@ -36,6 +36,7 @@
 }
 .head span {
     color: #F86F03;
+    font-weight: 700;
     text-shadow:0px 0px 25px #FFA41B ;
 }
 
@@ -50,7 +51,7 @@
 }
 
 .start-but {
-    width: 100px;
+    width: 150px;
     font-size: 1.25rem;
     font-weight: lighter;
     /* font-weight: 700; */
@@ -76,15 +77,18 @@
     height: 50px;
     border-radius:5px;
     background: transparent;
-    border: 2px solid #F86F03;
+    border: 1px solid #F86F03;
     color: #F86F03;
     font-size: 1rem;
     font-weight: lighter;
     margin-top: 10px;
+    margin-left: 5px;
+    
     
 }
 .util:hover {
     background-color: #F86F03;
     color: white;
+    box-shadow: 0 0 25px #F86F03;
     
 }
