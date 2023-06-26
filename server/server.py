@@ -22,7 +22,9 @@ async def root():
 
 @api.post('/post/')
 async def post(prompt:Prompt):
+    print("REQUEST RECIEVED! PROCESSING DATA...")
     data = getMessage(str(prompt))
+    print("DATA PROCESSED! SENDING RESPONSE...")
     return JSONResponse(content=data, media_type='application/json')
 
     
