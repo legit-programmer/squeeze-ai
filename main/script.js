@@ -9,7 +9,7 @@ const postPrompt = (url) => {
         headers: {
             "Content-type": "application/json; charset=UTF-8",
         },
-    });
+    }).then(res=>console.log(res));
 };
 
 const getUrl = () => {

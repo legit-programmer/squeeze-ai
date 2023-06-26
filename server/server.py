@@ -21,7 +21,6 @@ async def root():
 
 @api.post('/post/')
 async def post(prompt:Prompt):
-    getMessage(str(prompt))
-    return {'prompt':prompt}
+    return {'message':getMessage(str(prompt))}
 
     

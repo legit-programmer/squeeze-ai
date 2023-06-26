@@ -11,7 +11,7 @@ def getMessage(_prompt:str):
     message = _prompt
     for chunk in client.send_message("capybara", message):
         pass
-    print(chunk["text"])
+    return chunk["text"]
 
 print('Available bots:')
 print(json.dumps(client.bot_names, indent=4))
