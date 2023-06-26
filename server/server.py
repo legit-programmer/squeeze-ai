@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from sage import getMessage
@@ -21,6 +22,7 @@ async def root():
 
 @api.post('/post/')
 async def post(prompt:Prompt):
-    return {'message':getMessage(str(prompt))}
+    data = getMessage(str(prompt))
+    return JSONResponse(content=data, media_type='application/json')
 
     
