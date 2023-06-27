@@ -1,13 +1,13 @@
-*{
- margin: 0;
- padding: 0;
- font-family: 'Montserrat', sans-serif;
- /* background-color: #191c40;    */
-/* font-family: 'Poppins', sans-serif; */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    /* background-color: #191c40;    */
+    /* font-family: 'Poppins', sans-serif; */
 }
 
 .main {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     background-color: #060920;
     width: 500px;
     height: 600px;
@@ -18,33 +18,30 @@
 #result-parent textarea {
     margin-top: 20px;
     background: transparent;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     color: rgb(255, 255, 255);
     font-size: 1rem;
     border-radius: 8px;
     padding: 5px;
     resize: none;
-
 }
 
 .head {
     color: white;
     font-size: 2rem;
     font-weight: lighter;
-
 }
 .head span {
-    color: #F86F03;
+    color: #f86f03;
     font-weight: 700;
-    text-shadow:0px 0px 25px #FFA41B ;
+    text-shadow: 0px 0px 25px #ffa41b;
 }
 
 .start-div {
     margin-top: 50px;
     display: flex;
     justify-content: center;
-
 }
 #inner-main {
     height: 100%;
@@ -55,40 +52,39 @@
     font-size: 1.25rem;
     font-weight: lighter;
     /* font-weight: 700; */
-    
-    color:#F86F03;
+
+    color: #f86f03;
     cursor: pointer;
-    
+
     height: 35px;
-    background:transparent;
-    border: 2px solid #F86F03;
+    background: transparent;
+    border: 2px solid #f86f03;
     border-radius: 50px;
+    transition: all 0.5s;
 }
 
 .start-but:hover {
-    background-color: #F86F03;
-    
+    background-color: #f86f03;
+
     color: white;
-    box-shadow: 0 0 25px #F86F03;
+    box-shadow: 0 0 25px #f86f03;
 }
 
 .util {
     width: 100px;
     height: 50px;
-    border-radius:5px;
+    border-radius: 5px;
     background: transparent;
-    border: 1px solid #F86F03;
-    color: #F86F03;
+    border: 2px solid #f86f03;
+    color: #f86f03;
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: 500;
     margin-top: 10px;
     margin-left: 5px;
-    
-    
+    transition: all 0.5s;
 }
 .util:hover {
-    background-color: #F86F03;
+    background-color: #f86f03;
     color: white;
-    box-shadow: 0 0 25px #F86F03;
-    
+    box-shadow: 0 0 25px #f86f03;
 }

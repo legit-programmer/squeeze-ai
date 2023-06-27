@@ -6,8 +6,7 @@ const windows = {
     spinner:
         '<h1 style="color: white; margin-right: 5px;text-shadow: 0 0 25px #ffffff;">Lemme cook</h1><img style="width: 50px; border-radius: 100%;box-shadow: 0 0 25px #F86F03;" src="https://media.giphy.com/avatars/iqoption/cBA2NTl4H0wy.gif" alt="" >',
 };
-let current = "start";
-console.log(windows["start"]);
+
 main.innerHTML = windows["start"];
 
 const addContent = () => {
