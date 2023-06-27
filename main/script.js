@@ -13,6 +13,7 @@ main.innerHTML = windows["start"];
 const setValue = (text) => {
     const textarea = document.getElementById("result");
     textarea.innerText = text;
+    
 };
 
 
@@ -21,7 +22,7 @@ const postPrompt = (url) => {
     fetch("http://127.0.0.1:8000/post/", {
         method: "POST",
         body: JSON.stringify({
-            prompt: `summarize with important points this web page: ${url} `,
+            prompt: url,
         }),
         headers: {
             "Content-type": "application/json; charset=UTF-8",

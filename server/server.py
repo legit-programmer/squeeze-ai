@@ -24,6 +24,7 @@ async def root():
 async def post(prompt:Prompt):
     print("REQUEST RECIEVED! PROCESSING DATA...")
     data = getMessage(str(prompt))
+    print(data)
     print("DATA PROCESSED! SENDING RESPONSE...")
     return JSONResponse(content=data, media_type='application/json')
 
