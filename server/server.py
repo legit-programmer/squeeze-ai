@@ -2,11 +2,14 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from sage import getMessage, describeMessage
+from sage import getMessage, describeMessage, cutMessage
 
 api = FastAPI()
+
+
 class Prompt(BaseModel):
-    prompt:str
+    prompt: str
+
 
 api.add_middleware(
     CORSMiddleware,
@@ -16,9 +19,11 @@ api.add_middleware(
     allow_headers=["*"],
 )
 
+
 @api.get('/')
 async def root():
-    return {'message':'Hello WOlrd'}
+    return {'message': 'Hello WOlrd'}
+
 
 @api.get('/add/')
 async def add():
@@ -28,12 +33,20 @@ async def add():
     print('CONTENT ADDED!\nSENDING RESPONSE')
     return JSONResponse(content=data)
 
+
+@api.get('/cut/')
+async def add():
+    print('REQUEST RECIEVED!\nCUTTING CONTENT...')
+    data = cutMessage()
+    print(data)
+    print('CONTENT SHORTENED!\nSENDING RESPONSE')
+    return JSONResponse(content=data)
+
+
 @api.post('/post/')
-async def post(prompt:Prompt):
+async def post(prompt: Prompt):
     print("REQUEST RECIEVED! PROCESSING DATA...")
     data = getMessage(str(prompt))
     print(data)
     print("DATA PROCESSED! SENDING RESPONSE...")
     return JSONResponse(content=data)
-
-    
