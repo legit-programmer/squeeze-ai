@@ -11,6 +11,21 @@
 - Variable length of the content to be squeezed
 - Easy to use
 
+## Setup locally
+Download the [latest release](https://github.com/legit-programmer/squeeze-ai/releases)
+
+Extract the zip file and load the root directory of the extension into your [chromium based browser](https://www.google.co.in/search?q=chromium+based+browsers).
+
+Step by step guide to load an unpacked extension is [here](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked)
+
+Fire up the server🚀
+```
+cd server
+pip install -r requirements.txt
+uvicorn server:api --reload
+```
+
+Done!
 
 ## Authors
 
