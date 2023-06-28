@@ -35,7 +35,7 @@ async def add():
 
 
 @api.get('/cut/')
-async def add():
+async def cut():
     print('REQUEST RECIEVED!\nCUTTING CONTENT...')
     data = cutMessage()
     print(data)
