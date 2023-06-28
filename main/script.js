@@ -4,7 +4,7 @@ import config from './config.json' assert {type:'json'};
 
 const main = document.getElementById("main");
 main.innerHTML = windows["start"];
-const serverUrl = config['env']==='dev'?'http://127.0.0.1:8000/':'https://squeezeai.programmerpy.repl.co/';
+const serverUrl = config['env']==='dev'?'http://127.0.0.1:8000/':'https://squeezeai.legit-programmer.repl.co/';
 console.log(serverUrl)
 
 const addContent = () => {
