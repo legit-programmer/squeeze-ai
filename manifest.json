@@ -8,7 +8,13 @@
         "default_popup": "./main/index.html",
         "default_title": "SqueezeAi"
     },
-    "permissions":[
+    "permissions": [
         "tabs"
-    ]
+    ],
+    "icons": {
+        "16": "./main/assets/icon16.png",
+        "32": "./main/assets/icon32.png",
+        "48": "./main/assets/icon48.png",
+        "128": "./main/assets/icon128.png"
+    }
 }

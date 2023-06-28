@@ -73,13 +73,13 @@
 }
 
 .util {
-    width: 100px;
+    width: 75px;
     height: 50px;
     border-radius: 5px;
     background: transparent;
     border: 2px solid #f86f03;
     color: #f86f03;
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: 500;
     margin-top: 10px;
     margin-left: 5px;
