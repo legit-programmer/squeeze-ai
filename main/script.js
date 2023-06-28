@@ -1,18 +1,22 @@
+// Choose the congig in config.js file (dev or prod)
 import { windows } from "./utils.js";
+import config from './config.json' assert {type:'json'};
 
 const main = document.getElementById("main");
 main.innerHTML = windows["start"];
+const serverUrl = config['env']==='dev'?'http://127.0.0.1:8000/':'https://squeezeai.programmerpy.repl.co/';
+console.log(serverUrl)
 
 const addContent = () => {
     main.innerHTML = windows["spinner"];
-    fetch("http://127.0.0.1:8000/add/")
+    fetch(serverUrl+"add/")
         .then((res) => res.json())
         .then((res) => resultWindow(res));
 };
 
 const cutContent = () => {
     main.innerHTML = windows["spinner"];
-    fetch("http://127.0.0.1:8000/cut/")
+    fetch(serverUrl+"cut/")
         .then((res) => res.json())
         .then((res) => resultWindow(res));
 };
@@ -39,7 +43,7 @@ const resultWindow = (text) => {
 };
 
 const postPrompt = (url) => {
-    fetch("http://127.0.0.1:8000/post/", {
+    fetch(serverUrl+"post/", {
         method: "POST",
         body: JSON.stringify({
             prompt: url,
