@@ -25,8 +25,16 @@ const cutContent = () => {
 
 const resultWindow = (text) => {
     main.innerHTML = windows["result"];
+    const arrMain = String(text).split(" ");
     const textarea = document.getElementById("result");
-    textarea.innerText = text;
+    let count = 0;
+    const interval = setInterval(() => {
+        textarea.innerText = textarea.value + ' ' + arrMain[count];
+        count += 1;
+        if (count === arrMain.length) {
+            clearInterval(interval);
+        }
+    }, 50);
 
     const add = document.getElementById("add");
     const cut = document.getElementById("cut");
