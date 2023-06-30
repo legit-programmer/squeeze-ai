@@ -20,7 +20,7 @@ def getMessage(_prompt: str):
 
 
 def describeMessage():
-    message = 'I need lengthy and brief content.'
+    message = 'I need a bit lengthy'
     return sendMessage(message)
 
 
