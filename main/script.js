@@ -1,22 +1,26 @@
-// Choose the congig in config.js file (dev or prod)
+// Choose the config in config.js file (dev or prod)
 import { windows } from "./utils.js";
-import config from './config.json' assert {type:'json'};
+import config from "./config.json" assert { type: "json" };
 
 const main = document.getElementById("main");
 main.innerHTML = windows["start"];
-const serverUrl = config['env']==='dev'?'http://127.0.0.1:8000/':'https://squeezeai.legit-programmer.repl.co/';
-console.log(serverUrl)
+const github = document.getElementById("github");
+const serverUrl =
+    config["env"] === "dev"
+        ? "http://127.0.0.1:8000/"
+        : "https://squeezeai.legit-programmer.repl.co/";
+console.log(serverUrl);
 
 const addContent = () => {
     main.innerHTML = windows["spinner"];
-    fetch(serverUrl+"add/")
+    fetch(serverUrl + "add/")
         .then((res) => res.json())
         .then((res) => resultWindow(res));
 };
 
 const cutContent = () => {
     main.innerHTML = windows["spinner"];
-    fetch(serverUrl+"cut/")
+    fetch(serverUrl + "cut/")
         .then((res) => res.json())
         .then((res) => resultWindow(res));
 };
@@ -25,11 +29,14 @@ const resultWindow = (text) => {
     main.innerHTML = windows["result"];
     const arrMain = String(text).split(" ");
     const textarea = document.getElementById("result");
-    const copy = document.getElementById('copy');
+    const copy = document.getElementById("copy");
     let count = 0;
-    copy.addEventListener('click', ()=>{textarea.select();document.execCommand('copy')})
+    copy.addEventListener("click", () => {
+        textarea.select();
+        document.execCommand("copy");
+    });
     const interval = setInterval(() => {
-        textarea.innerText = textarea.value + ' ' + arrMain[count];
+        textarea.innerText = textarea.value + " " + arrMain[count];
         count += 1;
         if (count === arrMain.length) {
             clearInterval(interval);
@@ -43,7 +50,7 @@ const resultWindow = (text) => {
 };
 
 const postPrompt = (url) => {
-    fetch(serverUrl+"post/", {
+    fetch(serverUrl + "post/", {
         method: "POST",
         body: JSON.stringify({
             prompt: url,
@@ -77,3 +84,6 @@ const getUrl = () => {
 
 const start = document.getElementById("but");
 start.addEventListener("click", getUrl);
+github.addEventListener("click", () => {
+    window.open("https://github.com/legit-programmer/");
+});
