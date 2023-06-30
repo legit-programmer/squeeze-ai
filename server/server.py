@@ -46,7 +46,7 @@ async def cut():
 @api.post('/post/')
 async def post(prompt: Prompt):
     print("REQUEST RECIEVED! PROCESSING DATA...")
-    data = getMessage(str(prompt))
+    data = getMessage(str(prompt)[8:-1])#extracting the url
     print(data)
     print("DATA PROCESSED! SENDING RESPONSE...")
     return JSONResponse(content=data)

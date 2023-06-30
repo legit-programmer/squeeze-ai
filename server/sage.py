@@ -15,7 +15,7 @@ def sendMessage(_message):
 
 
 def getMessage(_prompt: str):
-    message = f'summarize this web page: {_prompt}'
+    message = f'summarize a web page at {_prompt}'
     return sendMessage(message)
 
 
