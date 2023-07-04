@@ -1,6 +1,7 @@
 
 ![](https://i.ibb.co/SyS6L0h/Capture.png)
 
+
 #### SqueezeAI helps you to scrap/summarize the content of the webpage you are currently on with just few clicks! It saves your time by only extracting and providing the essential articles/paragraphs from the page.
 
 
@@ -10,7 +11,13 @@
 - Live previews
 - Variable length of the content to be squeezed
 - Easy to use
-
+  
+## Stack
+- Javascript for scripting the extension
+- Python for the server
+- [FastAPI](https://fastapi.tiangolo.com/) for handling serverside requests
+- [PoeAPI](https://github.com/ading2210/poe-api) for [gpt](https://openai.com/blog/chatgpt) services
+ 
 ## Setup locally
 Download the [latest release](https://github.com/legit-programmer/squeeze-ai/releases)
 
