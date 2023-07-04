@@ -1,4 +1,4 @@
 fastapi
 uvicorn[standard]
-poe-api==0.4.7
+poe-api==0.4.8
 pydantic
