@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from sage import getMessage, describeMessage, cutMessage
+from sage import getMessage, describeMessage, cutMessage, Status
 
 api = FastAPI()
 
@@ -45,8 +45,12 @@ async def cut():
 
 @api.post('/post/')
 async def post(prompt: Prompt):
-    print("REQUEST RECIEVED! PROCESSING DATA...")
-    data = getMessage(str(prompt)[8:-1])#extracting the url
-    print(data)
-    print("DATA PROCESSED! SENDING RESPONSE...")
-    return JSONResponse(content=data)
+    if Status.status:
+    
+        print("REQUEST RECIEVED! PROCESSING DATA...")
+        data = getMessage(str(prompt)[8:-1])
+        print(data)
+        print("DATA PROCESSED! SENDING RESPONSE...")
+        return JSONResponse(content=data)
+    else:
+        return JSONResponse(content='Server is under maintenance😢')

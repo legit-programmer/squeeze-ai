@@ -7,6 +7,10 @@ load_dotenv()
 token = os.getenv('TOKEN')
 client = None
 
+class Status:
+	def __init__(self):
+		self.status=False
+
 def ClientInit():
     global client
     client = poe.Client(token=token)
@@ -38,5 +42,10 @@ def cutMessage():
 
 
 print('Available bots:')
-ClientInit()
-print(json.dumps(client.bot_names, indent=4))
+try:
+	ClientInit()
+	print(json.dumps(client.bot_names, indent=4))
+	Status.status=True
+except RuntimeError:
+	print('server down')
+	Status.status=False
