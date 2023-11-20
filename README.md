@@ -1,4 +1,4 @@
-
+**Note:- The python package 'poe-api' which provides free access to OpenAI api is no longer stable.**
 ![](https://i.ibb.co/SyS6L0h/Capture.png)
 
 
